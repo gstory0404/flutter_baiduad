@@ -86,6 +86,7 @@ class _NativeAdViewState extends State<NativeAdView> {
           viewType: _viewType,
           creationParams: {
             "iosId": widget.iosId,
+            "appSid": widget.appSid,
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
             "isCacheVideo": widget.isCacheVideo,
@@ -108,6 +109,7 @@ class _NativeAdViewState extends State<NativeAdView> {
 
   //监听原生view传值
   Future<dynamic> _platformCallHandler(MethodCall call) async {
+    print("信息流传回值===》${call.arguments}");
     switch (call.method) {
       //显示广告
       case FlutterBaiduAdMethod.onShow:

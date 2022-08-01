@@ -2,7 +2,7 @@
 //  BannerView.m
 //  Pods
 //
-//  Created by 郭维佳 on 2021/11/27.
+//  Created by gstory on 2021/11/27.
 //
 
 #import <Foundation/Foundation.h>
@@ -53,13 +53,12 @@
 
 - (instancetype)initWithWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id)args binaryMessenger:(NSObject<FlutterBinaryMessenger> *)messenger{
     if ([super init]) {
-        self.container= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 100)];
-        self.container.backgroundColor = [UIColor brownColor];
-        _viewId = viewId;
-        _appSid = args[@"appSid"];
-        _codeId = args[@"iosId"];
-        _width =args[@"viewWidth"];
-        _height =args[@"viewWidth"];
+        self.viewId = viewId;
+        self.appSid = args[@"appSid"];
+        self.codeId = args[@"iosId"];
+        self.width =args[@"viewWidth"];
+        self.height =args[@"viewWidth"];
+        self.container= [[UIView alloc] initWithFrame:frame];
         NSString* channelName = [NSString stringWithFormat:@"com.gstory.flutter_baiduad/BannerView_%lld", viewId];
         _channel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:messenger];
         [self loadBannerAd];
@@ -70,13 +69,13 @@
 //加载广告
 -(void)loadBannerAd{
     //load横幅
-    [_bdBannerView removeFromSuperview];
-    _bdBannerView = [[BaiduMobAdView alloc] init];
-    _bdBannerView.frame = CGRectMake(0, 0, 300, 100);
-    _bdBannerView.AdUnitTag = _codeId;
-    _bdBannerView.AdType = BaiduMobAdViewTypeBanner;
-    _bdBannerView.delegate = self;
-    [_bdBannerView start];
+    [self.container removeFromSuperview];
+    self.bdBannerView = [[BaiduMobAdView alloc] init];
+    self.bdBannerView.frame = CGRectMake(0, 0, _width.floatValue, _height.floatValue);
+    self.bdBannerView.AdUnitTag = self.codeId;
+    self.bdBannerView.AdType = BaiduMobAdViewTypeBanner;
+    self.bdBannerView.delegate = self;
+    [self.bdBannerView start];
 }
 
 # pragma mark -- delegate
@@ -111,7 +110,6 @@
  *  广告载入失败
  */
 - (void)failedDisplayAd:(BaiduMobFailReason)reason{
-    [self.bdBannerView removeFromSuperview];
     GLog(@"横幅广告: 加载失败 %d", reason);
     NSDictionary *dictionary = @{@"code":@(0),@"message":@"广告展示失败"};
     [_channel invokeMethod:@"onClose" arguments:dictionary result:nil];

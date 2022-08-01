@@ -7,6 +7,7 @@
 #import "BaiduAdManager.h"
 #import "BdSplashAd.h"
 #import "BdInsertAd.h"
+#import "BdNativeView.h"
 
 @implementation FlutterBaiduadPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -22,6 +23,8 @@
     [registrar registerViewFactory:[[BdBannerViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_baiduad/BannerAdView"];
     //注册splash
     [registrar registerViewFactory:[[BdSplashAdFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_baiduad/SplashAdView"];
+    //注册native
+    [registrar registerViewFactory:[[BdNativeViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_baiduad/NativeAdView"];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {

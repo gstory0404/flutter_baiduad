@@ -2,7 +2,7 @@
 //  InsertAd.m
 //  flutter_baiduad
 //
-//  Created by 郭维佳 on 2021/11/29.
+//  Created by gstory on 2021/11/29.
 //
 
 #import "BdInsertAd.h"
@@ -41,7 +41,7 @@
 //预加载插屏广告
 -(void)loadInsertAd{
     _bdInsertAd = [[BaiduMobAdExpressInterstitial alloc]init];
-    _bdInsertAd.AdUnitTag = _codeId;
+    _bdInsertAd.adUnitTag = _codeId;
     _bdInsertAd.delegate = self;
     [_bdInsertAd setPublisherId:[BaiduAdManager sharedInstance].getAppId];
 //    _bdInsertAd.interstitialType = BaiduMobAdViewTypeInterstitialOther;

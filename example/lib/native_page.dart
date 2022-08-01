@@ -26,7 +26,7 @@ class _NativePageState extends State<NativePage> {
               //android广告ID
               androidId: "7792005",
               //ios广告ID
-              iosId: "7792005",
+              iosId: "8279206",
               //广告宽 单位dp   初始大小 广告加载完成会自动设置成广告大小
               viewWidth: 400,
               //广告高  单位dp
@@ -51,12 +51,12 @@ class _NativePageState extends State<NativePage> {
               })),
           FlutterBaiduad.nativeAdView(
               androidId: "7792005",
-              iosId: "7792005",
+              iosId: "8279206",
               viewWidth: 300.0,
               viewHeight: 100.0),
           FlutterBaiduad.nativeAdView(
               androidId: "7792005",
-              iosId: "7792005",
+              iosId: "8279206",
               viewWidth: 320.0,
               viewHeight: 180.0)
         ],

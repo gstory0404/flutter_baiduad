@@ -1,21 +1,21 @@
 //
-//  SplashAd.h
+//  BdNativeView.h
 //  flutter_baiduad
 //
-//  Created by gstory on 2021/11/29.
+//  Created by gstory on 2022/7/28.
 //
 
 #import <Foundation/Foundation.h>
 #import <Flutter/Flutter.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface BdSplashAdFactory : NSObject<FlutterPlatformViewFactory>
+@interface BdNativeViewFactory : NSObject<FlutterPlatformViewFactory>
 
 - (instancetype)initWithMessenger:(NSObject<FlutterBinaryMessenger>*)messager;
 
 @end
 
-@interface BdSplashAd : NSObject<FlutterPlatformView>
+@interface BdNativeView : NSObject<FlutterPlatformView>
 
 - (instancetype)initWithWithFrame:(CGRect)frame
                    viewIdentifier:(int64_t)viewId

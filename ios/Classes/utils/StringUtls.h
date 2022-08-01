@@ -2,7 +2,7 @@
 //  StringUtls.h
 //  flutter_baiduad
 //
-//  Created by 郭维佳 on 2021/11/29.
+//  Created by gstory on 2021/11/29.
 //
 
 #import <Foundation/Foundation.h>

@@ -25,8 +25,8 @@ class _BannerPageState extends State<BannerPage> {
           FlutterBaiduad.bannerAdView(
             androidId: "7792006",
             iosId: "7800783",
-            viewWidth: 210, //推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
-            viewHeight: 90,
+            viewWidth: 200, //推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
+            viewHeight: 30,
             autoplay: true,
             callBack: FlutterBaiduAdBannerCallBack(
               onShow: (){
@@ -46,14 +46,14 @@ class _BannerPageState extends State<BannerPage> {
           FlutterBaiduad.bannerAdView(
             androidId: "7792006",
             iosId: "7800783",
-            viewWidth: 210,
-            viewHeight: 90,
+            viewWidth: 200, //推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
+            viewHeight: 30,
           ),
           FlutterBaiduad.bannerAdView(
             androidId: "7792006",
             iosId: "7800783",
-            viewWidth: 210,
-            viewHeight: 90,
+            viewWidth: 200, //推荐您将Banner的宽高比固定为20：3以获得最佳的广告展示效果
+            viewHeight: 30,
           ),
         ],
       ),
