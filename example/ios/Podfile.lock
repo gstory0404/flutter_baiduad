@@ -1,0 +1,29 @@
+PODS:
+  - BaiduMobAdSDK (4.89)
+  - Flutter (1.0.0)
+  - flutter_baiduad (0.0.1):
+    - BaiduMobAdSDK (= 4.89)
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_baiduad (from `.symlinks/plugins/flutter_baiduad/ios`)
+
+SPEC REPOS:
+  trunk:
+    - BaiduMobAdSDK
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_baiduad:
+    :path: ".symlinks/plugins/flutter_baiduad/ios"
+
+SPEC CHECKSUMS:
+  BaiduMobAdSDK: ccac9d2b5d80e6674f63b7b1ea4ce956dbfa1eed
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  flutter_baiduad: 7f3ac5eaee00a70ec690f5cc9ffa0f1727119851
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.11.3
