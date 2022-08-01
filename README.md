@@ -1,4 +1,4 @@
-# 腾讯优量汇(广点通)广告 Flutter版本
+# 百度 百青藤广告SDK flutter版本插件
 
 <p>
 <a href="https://pub.flutter-io.cn/packages/flutter_baiduad"><img src=https://img.shields.io/badge/flutter_baiduad-v0.0.2-success></a>
