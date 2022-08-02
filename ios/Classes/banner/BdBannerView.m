@@ -75,6 +75,7 @@
     self.bdBannerView.AdUnitTag = self.codeId;
     self.bdBannerView.AdType = BaiduMobAdViewTypeBanner;
     self.bdBannerView.delegate = self;
+    [self.container addSubview:self.bdBannerView];
     [self.bdBannerView start];
 }
 
@@ -94,7 +95,7 @@
  */
 - (BOOL)enableLocation
 {
-    return NO;
+    return YES;
 }
 
 /**
@@ -102,8 +103,7 @@
  */
 - (void)willDisplayAd:(BaiduMobAdView *)adview{
     GLog(@"横幅广告: 加载成功");
-    [self.container removeFromSuperview];
-    [self.container addSubview:adview];
+
 }
 
 /**

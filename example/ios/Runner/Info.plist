@@ -22,73 +22,7 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>bitauto.yicheapp</string>
-		<string>telprompt</string>
-		<string>sms</string>
 		<string>tel</string>
-		<string>openapp.jdmobile</string>
-		<string>vipshop</string>
-		<string>tbopen</string>
-		<string>suning</string>
-		<string>ctrip</string>
-		<string>qunariphone</string>
-		<string>iMeituan</string>
-		<string>dianping</string>
-		<string>lianjia</string>
-		<string>pddopen</string>
-		<string>xhsdiscover</string>
-		<string>baiduhaokan</string>
-		<string>bdminivideo</string>
-		<string>baiduboxlite</string>
-		<string>baiduboxmission</string>
-		<string>com.baidu.tieba</string>
-		<string>zhihu</string>
-		<string>wireless1688</string>
-		<string>iqiyi</string>
-		<string>weixin</string>
-		<string>qihooloan</string>
-		<string>weishi</string>
-		<string>travelguide</string>
-		<string>wbmain</string>
-		<string>taobaotravel</string>
-		<string>alipays</string>
-		<string>youku</string>
-		<string>openjdlite</string>
-		<string>kwai</string>
-		<string>ksnebula</string>
-		<string>sinaweibo</string>
-		<string>openapp.jdpingou</string>
-		<string>cainiao</string>
-		<string>kaola</string>
-		<string>OneTravel</string>
-		<string>lianjiabeike</string>
-		<string>taobaolite</string>
-		<string>eleme</string>
-		<string>tomas</string>
-		<string>secoo</string>
-		<string>taoumaimai</string>
-		<string>fleamarket</string>
-		<string>taobaoliveshare</string>
-		<string>amapuri</string>
-		<string>openanjuke</string>
-		<string>snssdk1128</string>
-		<string>txvideo</string>
-		<string>mttbrowser</string>
-		<string>bilibili</string>
-		<string>freereader</string>
-		<string>tantanapp</string>
-		<string>momochat</string>
-		<string>tmall</string>
-		<string>bosszp</string>
-		<string></string>
-		<string>vmall</string>
-		<string>yykiwi</string>
-		<string>tuhu</string>
-		<string>miguvideo</string>
-		<string>comjia</string>
-		<string>bitauto.yicheapp</string>
-		<string>yymobile</string>
-		<string>shuqireader</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -120,5 +54,9 @@
 	<true/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string></string>
+    <key>io.flutter.embedded_views_preview</key>
+     <true/>
 </dict>
 </plist>
