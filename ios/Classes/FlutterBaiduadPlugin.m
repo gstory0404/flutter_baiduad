@@ -23,7 +23,7 @@
     [registrar registerViewFactory:[[BdBannerViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_baiduad/BannerAdView"];
     //注册splash
     [registrar registerViewFactory:[[BdSplashAdFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_baiduad/SplashAdView"];
-    //注册native
+    //注册信息流
     [registrar registerViewFactory:[[BdNativeViewFactory alloc] initWithMessenger:registrar.messenger] withId:@"com.gstory.flutter_baiduad/NativeAdView"];
 }
 

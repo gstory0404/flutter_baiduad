@@ -22,6 +22,7 @@ class _NativePageState extends State<NativePage> {
       ),
       body: ListView(
         children: [
+          //优选
           FlutterBaiduad.nativeAdView(
               //android广告ID
               androidId: "7792005",
@@ -35,6 +36,38 @@ class _NativePageState extends State<NativePage> {
               timeOut: 5000,
               //是否wifi缓存视频物料
               isCacheVideo: true,
+              //是否是优选还是自渲染
+              isExpress: true,
+              //广告回调
+              callBack: FlutterBaiduAdNativeCallBack(onShow: () {
+                print("信息流广告显示了");
+              }, onClose: () {
+                print("信息流广告关闭了");
+              }, onFail: (code, message) {
+                print("信息流广告错误了 $code $message");
+              }, onClick: () {
+                print("信息流广告点击了");
+              }, onExpose: () {
+                print("信息流广告曝光了");
+              }, onDisLike: () {
+                print("信息流广告点击了不感兴趣");
+              })),
+          //自渲染
+          FlutterBaiduad.nativeAdView(
+              //android广告ID
+              androidId: "7792005",
+              //ios广告ID
+              iosId: "8284471",
+              //广告宽 单位dp   初始大小 广告加载完成会自动设置成广告大小
+              viewWidth: 400,
+              //广告高  单位dp
+              viewHeight: 200,
+              //超时
+              timeOut: 5000,
+              //是否wifi缓存视频物料
+              isCacheVideo: true,
+              //是否是优选还是自渲染
+              isExpress: false,
               //广告回调
               callBack: FlutterBaiduAdNativeCallBack(onShow: () {
                 print("信息流广告显示了");
@@ -50,15 +83,24 @@ class _NativePageState extends State<NativePage> {
                 print("信息流广告点击了不感兴趣");
               })),
           FlutterBaiduad.nativeAdView(
+            androidId: "7792005",
+            iosId: "8284471",
+            viewWidth: 300.0,
+            viewHeight: 100.0,
+            isExpress: false,
+          ),
+          Container(
+            color: Colors.yellow,
+            width: 320,
+            height: 180,
+            child: FlutterBaiduad.nativeAdView(
               androidId: "7792005",
-              iosId: "8279206",
-              viewWidth: 300.0,
-              viewHeight: 100.0),
-          FlutterBaiduad.nativeAdView(
-              androidId: "7792005",
-              iosId: "8279206",
+              iosId: "8284471",
               viewWidth: 320.0,
-              viewHeight: 180.0)
+              viewHeight: 180.0,
+              isExpress: false,
+            ),
+          ),
         ],
       ),
     );

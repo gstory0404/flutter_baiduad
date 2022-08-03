@@ -68,6 +68,8 @@
  */
 - (void)interstitialAdLoaded:(BaiduMobAdExpressInterstitial *)interstitial{
     GLog(@"插屏广告请求成功");
+    NSDictionary *dictionary = @{@"adType":@"interactAd",@"onAdMethod":@"onReady"};
+    [[FlutterBaiduadEvent sharedInstance] sentEvent:dictionary];
 }
 
 /**
@@ -122,8 +124,7 @@
  */
 - (void)interstitialAdDownloadSucceeded:(BaiduMobAdExpressInterstitial *)interstitial{
     GLog(@"插屏广告视频缓存成功");
-    NSDictionary *dictionary = @{@"adType":@"interactAd",@"onAdMethod":@"onReady"};
-    [[FlutterBaiduadEvent sharedInstance] sentEvent:dictionary];
+   
 }
 
 /**

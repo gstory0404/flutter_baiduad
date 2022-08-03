@@ -16,6 +16,7 @@ class NativeAdView extends StatefulWidget {
   final int? timeOut;
   final double viewWidth;
   final double viewHeight;
+  final bool? isExpress;
   final FlutterBaiduAdNativeCallBack? callBack;
 
   const NativeAdView(
@@ -27,6 +28,7 @@ class NativeAdView extends StatefulWidget {
       required this.viewHeight,
       this.callBack,
       this.isCacheVideo,
+      this.isExpress,
       this.timeOut})
       : super(key: key);
 
@@ -48,11 +50,9 @@ class _NativeAdViewState extends State<NativeAdView> {
   @override
   void initState() {
     super.initState();
-    setState(() {
-      _isShowAd = true;
-      _width = widget.viewWidth;
-      _height = widget.viewHeight;
-    });
+    _isShowAd = true;
+    _width = widget.viewWidth;
+    _height = widget.viewHeight;
   }
 
   @override
@@ -73,6 +73,7 @@ class _NativeAdViewState extends State<NativeAdView> {
             "timeOut": widget.timeOut,
             "viewWidth": widget.viewWidth,
             "viewHeight": widget.viewHeight,
+            "isExpress": widget.isExpress,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),
@@ -91,6 +92,7 @@ class _NativeAdViewState extends State<NativeAdView> {
             "viewHeight": widget.viewHeight,
             "isCacheVideo": widget.isCacheVideo,
             "timeOut": widget.timeOut,
+            "isExpress": widget.isExpress,
           },
           onPlatformViewCreated: _registerChannel,
           creationParamsCodec: const StandardMessageCodec(),
@@ -136,7 +138,7 @@ class _NativeAdViewState extends State<NativeAdView> {
       case FlutterBaiduAdMethod.onClick:
         widget.callBack?.onClick!();
         break;
-     //曝光
+      //曝光
       case FlutterBaiduAdMethod.onExpose:
         widget.callBack?.onExpose!();
         break;
@@ -149,7 +151,7 @@ class _NativeAdViewState extends State<NativeAdView> {
         }
         widget.callBack?.onClose!();
         break;
-     //不感兴趣
+      //不感兴趣
       case FlutterBaiduAdMethod.onDisLike:
         if (mounted) {
           setState(() {

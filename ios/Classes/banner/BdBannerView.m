@@ -39,7 +39,7 @@
 
 
 @interface BdBannerView()<BaiduMobAdViewDelegate>
-@property(nonatomic,strong) BaiduMobAdView *bdBannerView;
+@property(nonatomic,strong) BaiduMobAdView *bannerView;
 @property(nonatomic,strong) UIView *container;
 @property(nonatomic,assign) NSInteger viewId;
 @property(nonatomic,strong) FlutterMethodChannel *channel;
@@ -70,13 +70,14 @@
 -(void)loadBannerAd{
     //load横幅
     [self.container removeFromSuperview];
-    self.bdBannerView = [[BaiduMobAdView alloc] init];
-    self.bdBannerView.frame = CGRectMake(0, 0, _width.floatValue, _height.floatValue);
-    self.bdBannerView.AdUnitTag = self.codeId;
-    self.bdBannerView.AdType = BaiduMobAdViewTypeBanner;
-    self.bdBannerView.delegate = self;
-    [self.container addSubview:self.bdBannerView];
-    [self.bdBannerView start];
+    self.bannerView = [[BaiduMobAdView alloc] init];
+    self.bannerView.frame = CGRectMake(0, 0, self.width.floatValue, self.height.floatValue);
+    self.bannerView.AdUnitTag = @"8280989";
+    self.bannerView.AdType = BaiduMobAdViewTypeBanner;
+    self.bannerView.delegate = self;
+    [self.container addSubview:self.bannerView];
+    GLog(@"横幅广告: 开始加载");
+    [self.bannerView start];
 }
 
 # pragma mark -- delegate
@@ -112,7 +113,7 @@
 - (void)failedDisplayAd:(BaiduMobFailReason)reason{
     GLog(@"横幅广告: 加载失败 %d", reason);
     NSDictionary *dictionary = @{@"code":@(0),@"message":@"广告展示失败"};
-    [_channel invokeMethod:@"onClose" arguments:dictionary result:nil];
+    [_channel invokeMethod:@"onFail" arguments:dictionary result:nil];
 }
 
 

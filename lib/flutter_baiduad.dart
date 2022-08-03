@@ -192,7 +192,7 @@ class FlutterBaiduad {
   }
 
   ///
-  /// # 信息流广告
+  /// # 信息流广告（自渲染）
   /// [androidId] android广告ID
   /// [iosId] ios广告ID
   /// [appSid] 支持动态设置APPSID，该信息可从移动联盟获得。
@@ -200,17 +200,19 @@ class FlutterBaiduad {
   /// [timeOut] 超时
   /// [viewWidth] 广告宽 单位dp
   /// [viewHeight] 广告高  单位dp
+  /// [isExpress] true优选 false自渲染
   /// [FlutterBaiduAdNativeCallBack]  广告回调
   ///
   static Widget nativeAdView(
       {required String androidId,
-      required String iosId,
-      String? appSid,
-      bool? isCacheVideo,
-      int? timeOut,
-      required double viewWidth,
-      required double viewHeight,
-      FlutterBaiduAdNativeCallBack? callBack}) {
+        required String iosId,
+        String? appSid,
+        bool? isCacheVideo,
+        int? timeOut,
+        required double viewWidth,
+        required double viewHeight,
+        bool? isExpress,
+        FlutterBaiduAdNativeCallBack? callBack}) {
     return NativeAdView(
       androidId: androidId,
       iosId: iosId,
@@ -219,9 +221,12 @@ class FlutterBaiduad {
       timeOut: timeOut ?? 5000,
       viewWidth: viewWidth,
       viewHeight: viewHeight,
+      isExpress:isExpress ?? false,
       callBack: callBack,
     );
   }
+
+
 
   ///
   /// # 预加载插屏广告（百度优选）
